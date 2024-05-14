@@ -71,6 +71,9 @@ The image below shows an EMG signal recorded using the Flexiwave sensor, illustr
 
 </div>
 
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
 
 
