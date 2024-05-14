@@ -57,10 +57,17 @@ Range: 50-10,000 (1Kohm-1ohm)
 </div>
 Note: Use Screwdriver To Rotate The Knob
 
-## Signal
+## EMG Signal Recording
 
 The image below shows an EMG signal recorded using the Flexiwave sensor, illustrating the sensor's ability to capture detailed and accurate muscle activity data. This signal exemplifies the high precision and reliability of the Flexiwave sensor, making it an ideal tool for applications in biomechanics, biofeedback, and prosthetic development.
 
+<div align="center">
+
+| ![EMG Signal 1](path/to/emg_signal1.png) | ![EMG Signal 2](path/to/emg_signal2.png) |
+|-----------------------------------------|-----------------------------------------|
+| Description of EMG Signal 1             | Description of EMG Signal 2             |
+
+</div>
 
 
 
