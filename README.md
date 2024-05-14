@@ -16,7 +16,7 @@ Here are images that provide a detailed overview of the hardware design, illustr
 
 2.Input Impedance: 10^12 Ω
 
-3.Adjustable Instrumental Gain: 1 - 50
+3.Adjustable Instrumental Gain: 50 - 10000
 
 4.Bandpass filter: 20 – 500 Hz
 
@@ -47,11 +47,13 @@ Here are images that provide a detailed overview of the hardware design, illustr
 ## Gain
 
 The gain of the Flexiwave sensor is adjustable, allowing users to amplify the muscle signals to a desired level for optimal signal processing and analysis. This feature enhances the sensor's versatility, making it suitable for a wide range of applications in biomechanics and biofeedback.
-Range: 1-50 (1ohm-1Kohm)
+Range: 50-10,000 (1Kohm-1ohm)
 
 | ![Image 1](https://github.com/BrainovativeLabs/Flexiwave/blob/main/Images/Knob.jpg) | ![Image 2](https://github.com/BrainovativeLabs/Flexiwave/blob/main/Images/knob2.jpg) |
 |--------------------------------|--------------------------------|
-| Description of Knob 1         | Description of Knob 2         |
+| Turn Left For Gain 50      | Turn Right for Gain 10,000       |
+
+Note: Use Screwdriver To Rotate The Knob
 
 
 
