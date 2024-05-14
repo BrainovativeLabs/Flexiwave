@@ -66,9 +66,6 @@ The image below shows an EMG signal recorded using the Flexiwave sensor, illustr
 ![EMG Signal 1](https://github.com/BrainovativeLabs/Flexiwave/blob/main/Images/Signal.jpg)  
 *EMG Bandpass Filter*
 
-![EMG Signal 2](https://github.com/BrainovativeLabs/Flexiwave/blob/main/Images/Signal2.jpg)  
-*EMG Processing With IIR Filter & Moving Average*
-
 </div>
 
 ## License
