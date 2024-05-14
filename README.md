@@ -1,5 +1,5 @@
 # Flexiwave
-The Brainovative Flexiwave is an advanced EMG sensor featuring adjustable gain settings, ranging from 1 to 50 for instrumental gain. This adaptability makes it an ideal solution for a wide range of physiological monitoring applications. The Flexiwave seamlessly interfaces with microcontrollers, facilitating straightforward integration across a variety of platforms. It features a bandpass filter that can be configured to meet specific analysis requirements, ensuring flexibility and precision in signal output for diverse applications. This EMG sensor is perfect for applications in biomechanics, including biofeedback devices and prosthetic arms, enhancing user experience with precise muscle activity measurements.
+The Brainovative Flexiwave is an advanced EMG sensor featuring adjustable gain settings, ranging from 50 to 10000 for instrumental gain. This adaptability makes it an ideal solution for a wide range of physiological monitoring applications. The Flexiwave seamlessly interfaces with microcontrollers, facilitating straightforward integration across a variety of platforms. It features a bandpass filter that can be configured to meet specific analysis requirements, ensuring flexibility and precision in signal output for diverse applications. This EMG sensor is perfect for applications in biomechanics, including biofeedback devices and prosthetic arms, enhancing user experience with precise muscle activity measurements.
 
 # Hardware
 Here are images that provide a detailed overview of the hardware design, illustrating the various components and their configurations.
@@ -48,12 +48,14 @@ Here are images that provide a detailed overview of the hardware design, illustr
 
 The gain of the Flexiwave sensor is adjustable, allowing users to amplify the muscle signals to a desired level for optimal signal processing and analysis. This feature enhances the sensor's versatility, making it suitable for a wide range of applications in biomechanics and biofeedback.
 Range: 50-10,000 (1Kohm-1ohm)
-
+<div align="center">
 | ![Image 1](https://github.com/BrainovativeLabs/Flexiwave/blob/main/Images/Knob.jpg) | ![Image 2](https://github.com/BrainovativeLabs/Flexiwave/blob/main/Images/knob2.jpg) |
 |--------------------------------|--------------------------------|
 | Turn Left For Gain 50      | Turn Right for Gain 10,000       |
-
+</div>
 Note: Use Screwdriver To Rotate The Knob
+
+
 
 
 
