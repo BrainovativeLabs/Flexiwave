@@ -30,9 +30,9 @@ Here are images that provide a detailed overview of the hardware design, illustr
 
 9.Dimensions: 36.38 x 25.01 mm
 
-#How To Use
+# How To Use
 
-| ![Image](https://github.com/BrainovativeLabs/Flexiwave/blob/main/Images/Connection.jpg) |
+![Image](https://github.com/BrainovativeLabs/Flexiwave/blob/main/Images/Connection.jpg) 
  
 
 
