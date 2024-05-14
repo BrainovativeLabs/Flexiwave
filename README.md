@@ -32,7 +32,7 @@ Here are images that provide a detailed overview of the hardware design, illustr
 
 #How To Use
 
-|!(https://github.com/BrainovativeLabs/Flexiwave/blob/main/Images/Connection.jpg)|
+| !(https://github.com/BrainovativeLabs/Flexiwave/blob/main/Images/Connection.jpg) |
 
 
 
