@@ -14,12 +14,20 @@ Here are images that provide a detailed overview of the hardware design, illustr
 | Front        | Back      |
 
 ## Features
--Input Voltage: 3.3 – 5 V
--Input Impedance: 10^12 Ω
--Adjustable Instrumental Gain: 1 - 50
--Bandpass filter: 20 – 500 Hz
--Compatible Hardware: Compactable with any ADC
--Bio Potentials: EMG
--No. of channels: 1
--Electrodes: 3 (Positive, Negative, and Reference)
--Dimensions: 36.38 x 25.01 mm
+1.Input Voltage: 3.3 – 5 V
+
+2.Input Impedance: 10^12 Ω
+
+3.Adjustable Instrumental Gain: 1 - 50
+
+4.Bandpass filter: 20 – 500 Hz
+
+5.Compatible Hardware: Compactable with any ADC
+
+6.Bio Potentials: EMG
+
+7.No. of channels: 1
+
+8.Electrodes: 3 (Positive, Negative, and Reference)
+
+9.Dimensions: 36.38 x 25.01 mm
