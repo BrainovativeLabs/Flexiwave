@@ -22,7 +22,7 @@ Adjustable Instrumental Gain: 1 - 50
 
 Bandpass filter: 20 – 500 Hz
 
-Compatible Hardware: Compactable with an ADC, such as the Arduino UNO and Nano, Espressif ESP32, ,, STM32 . Additionally, you could opt for any standalone ADC that suits your requirements. These options provide flexibility for integrating analog-to-digital conversion into your projects.
+Compatible Hardware: Compactable with any ADC
 
 Bio Potentials: EMG
 
