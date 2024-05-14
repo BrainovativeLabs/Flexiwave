@@ -46,7 +46,9 @@ Here are images that provide a detailed overview of the hardware design, illustr
 
 ## Gain 
 The gain of the Flexiwave sensor is adjustable, allowing users to amplify the muscle signals to a desired level for optimal signal processing and analysis. This feature enhances the sensor's versatility, making it suitable for a wide range of applications in biomechanics and biofeedback.
-- ** Range: **1-50 (1ohm-1Kohm)
+Range:1-50 (1ohm-1Kohm)
+
+
 
 
 
