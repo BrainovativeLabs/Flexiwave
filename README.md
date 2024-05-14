@@ -44,6 +44,9 @@ Here are images that provide a detailed overview of the hardware design, illustr
 - **IN2:** Place this electrode on the same muscle, but a few centimeters away from Electrode 1, along the length of the muscle fiber. The distance between the electrodes typically ranges from 1 to 2 centimeters, depending on the size of the muscle and the specificity of the measurement.
 - **REF:** The reference electrode should be placed on a neutral, electrically inactive site. Common placements include a bony area or a distant site from the muscle being measured to ensure it picks up minimal muscle activity. Typical locations are the bony prominences such as the elbow, wrist, or an electrically neutral area like the shoulder or a nearby bone.
 
+## Gain
+** 
+The gain of the Flexiwave sensor is adjustable, allowing users to amplify the muscle signals to a desired level for optimal signal processing and analysis. This feature enhances the sensor's versatility, making it suitable for a wide range of applications in biomechanics and biofeedback.
 
 
 
