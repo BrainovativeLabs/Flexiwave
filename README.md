@@ -9,7 +9,7 @@ Here are images that provide a detailed overview of the hardware design, illustr
 |--------------------------------|--------------------------------|
 | Description of Image 1         | Description of Image 2         |
 
-| ![Image 3](path/to/image3.png) | ![Image 4](path/to/image4.png) |
+| ![Image 3](https://github.com/BrainovativeLabs/Flexiwave/blob/main/Images/PCB_Front.jpg) | ![Image 4](https://github.com/BrainovativeLabs/Flexiwave/blob/main/Images/PCB_Back.jpg) |
 |--------------------------------|--------------------------------|
 | Description of Image 3         | Description of Image 4         |
 
