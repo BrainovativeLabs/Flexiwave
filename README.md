@@ -5,5 +5,11 @@ The Brainovative Flexiwave is an advanced EMG sensor featuring adjustable gain s
 
 # Hardware
 Here are images that provide a detailed overview of the hardware design, illustrating the various components and their configurations.
-![PCB Images](https://github.com/BrainovativeLabs/Flexiwave/blob/main/Images/Back.jpg)
+| ![Image 1](path/to/image1.png) | ![Image 2](path/to/image2.png) |
+|--------------------------------|--------------------------------|
+| Description of Image 1         | Description of Image 2         |
+
+| ![Image 3](path/to/image3.png) | ![Image 4](path/to/image4.png) |
+|--------------------------------|--------------------------------|
+| Description of Image 3         | Description of Image 4         |
 
