@@ -63,10 +63,10 @@ The image below shows an EMG signal recorded using the Flexiwave sensor, illustr
 
 <div align="center">
 
-![EMG Signal 1](path/to/emg_signal1.png)  
+![EMG Signal 1](https://github.com/BrainovativeLabs/Flexiwave/blob/main/Images/Signal.jpg)  
 *Description of EMG Signal 1*
 
-![EMG Signal 2](path/to/emg_signal2.png)  
+![EMG Signal 2](https://github.com/BrainovativeLabs/Flexiwave/blob/main/Images/Signal2.jpg)  
 *Description of EMG Signal 2*
 
 </div>
