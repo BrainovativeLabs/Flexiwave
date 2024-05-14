@@ -13,3 +13,21 @@ Here are images that provide a detailed overview of the hardware design, illustr
 |--------------------------------|--------------------------------|
 | Front        | Back      |
 
+## Features
+Input Voltage: 3.3 – 5 V
+
+Input Impedance: 10^12 Ω
+
+Adjustable Instrumental Gain: 1 - 50
+
+Bandpass filter: 20 – 500 Hz
+
+Compatible Hardware: Compactable with an ADC, such as the Arduino UNO and Nano, Espressif ESP32, ,, STM32 . Additionally, you could opt for any standalone ADC that suits your requirements. These options provide flexibility for integrating analog-to-digital conversion into your projects.
+
+Bio Potentials: EMG
+
+No. of channels: 1
+
+Electrodes: 3 (Positive, Negative, and Reference)
+
+Dimensions: 36.38 x 25.01 mm
