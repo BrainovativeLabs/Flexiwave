@@ -63,7 +63,7 @@ The image below shows an EMG signal recorded using the Flexiwave sensor, illustr
 
 <div align="center">
 
-| ![EMG Signal 1](https://github.com/BrainovativeLabs/Flexiwave/blob/main/Images/knob2.jpg) | ![EMG Signal 2](https://github.com/BrainovativeLabs/Flexiwave/blob/main/Images/Signal2.jpg) |
+| ![EMG Signal 1](https://github.com/BrainovativeLabs/Flexiwave/blob/main/Images/Signal.jpg) | ![EMG Signal 2](https://github.com/BrainovativeLabs/Flexiwave/blob/main/Images/Signal2.jpg) |
 |-----------------------------------------|-----------------------------------------|
 | Description of EMG Signal 1             | Description of EMG Signal 2             |
 
