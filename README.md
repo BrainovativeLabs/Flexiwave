@@ -33,19 +33,17 @@ Here are images that provide a detailed overview of the hardware design, illustr
 # How To Use
 
 ![Image](https://github.com/BrainovativeLabs/Flexiwave/blob/main/Images/Connection.jpg) 
-Connections:
-VCC - 3.3v / 5v
-GND - GND of Microcontroller
-Out - Analog Output Of Microcontroller
-IN1 -Place this electrode on the muscle you want to measure. Ideally, it should be positioned over the belly of the muscle, 
-     which is the thickest part of the muscle.
-IN2 -Place this electrode on the same muscle, but a few centimeters away from Electrode 1, along the length of the muscle 
-     fiber. The distance between the electrodes typically ranges from 1 to 2 centimeters, depending on the size of the muscle 
-     and the specificity of the measurement.
-REF -The reference electrode should be placed on a neutral, electrically inactive site. Common placements include a bony area 
-     or a distant site from the muscle being measured to ensure it picks up minimal muscle activity. Typical locations are the 
-     bony prominences such as the elbow, wrist, or an electrically neutral area like the shoulder or a nearby bone.
- 
+
+
+## Connections
+
+- **VCC:** 3.3V / 5V
+- **GND:** GND of Microcontroller
+- **Out:** Analog Output of Microcontroller
+- **IN1:** Place this electrode on the muscle you want to measure. Ideally, it should be positioned over the belly of the muscle, which is the thickest part of the muscle.
+- **IN2:** Place this electrode on the same muscle, but a few centimeters away from Electrode 1, along the length of the muscle fiber. The distance between the electrodes typically ranges from 1 to 2 centimeters, depending on the size of the muscle and the specificity of the measurement.
+- **REF:** The reference electrode should be placed on a neutral, electrically inactive site. Common placements include a bony area or a distant site from the muscle being measured to ensure it picks up minimal muscle activity. Typical locations are the bony prominences such as the elbow, wrist, or an electrically neutral area like the shoulder or a nearby bone.
+
 
 
 
