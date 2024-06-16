@@ -4,7 +4,7 @@ from pylsl import StreamInfo, StreamOutlet
 import struct
 
 # BLE address of your ESP32 device
-address = "DC:54:75:61:72:1E" # Replace with your ESP32 BLE Address You Can Check Your ESP32 address using nRF Connect App
+address = " " # Replace with your ESP32 BLE Address You Can Check Your ESP32 address using nRF Connect App. Example DC:54:75:61:72:1E
 SERVICE_UUID = "4fafc201-1fb5-459e-8fcc-c5c9c331914b"
 CHARACTERISTIC_UUID = "beb5483e-36e1-4688-b7f5-ea07361b26a8"
 
