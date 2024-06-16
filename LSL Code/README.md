@@ -57,7 +57,7 @@ The following sections detail the setup, usage, and how to visualize and record 
    - Choose a file name and directory to save the recording.
    - Click the "Start" button to begin recording.
 
-![LabRecorder Interface](images/lab_recorder_screenshot.png)
+![LabRecorder Interface](https://github.com/BrainovativeLabs/Flexiwave/blob/main/Images/Lab%20Recorder.png)
 
 ## Visualizing Data in MATLAB using EEGLAB
 
