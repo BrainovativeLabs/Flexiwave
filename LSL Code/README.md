@@ -92,6 +92,3 @@ The following sections detail the setup, usage, and how to visualize and record 
 
 For any issues or questions, please open an issue on the GitHub repository or contact the maintainer.
 
----
-
-This README provides a detailed guide on setting up, using, and visualizing data from the EMG BLE system. Ensure to update paths and addresses as needed and refer to the provided screenshots for assistance.
