@@ -1,10 +1,21 @@
-
-#define BAUD_RATE 9600
-#define INPUT_PIN1 0
 #include <BLEDevice.h>
 #include <BLEServer.h>
 #include <BLEUtils.h>
 #include <BLE2902.h>
+
+const int emgPin = A0; // Analog pin for EMG sensor
+const int sampleRate = 500; // Sampling rate in Hz
+const float lowCutoff = 20.0; // Low cutoff frequency of bandpass filter
+const float highCutoff = 500.0; // High cutoff frequency of bandpass filter
+
+float filterCoeffs1[5]; // Array to hold coefficients for the first filter stage
+float filterCoeffs2[5]; // Array to hold coefficients for the second filter stage
+float x1[3] = {0}; // Input signal history for the first stage
+float y1_hist[3] = {0}; // Output signal history for the first stage
+float x2[3] = {0}; // Input signal history for the second stage
+float y2_hist[3] = {0}; // Output signal history for the second stage
+
+#define BAUD_RATE 115200
 #define SERVICE_UUID        "4fafc201-1fb5-459e-8fcc-c5c9c331914b"
 #define CHARACTERISTIC_UUID "beb5483e-36e1-4688-b7f5-ea07361b26a8"
 
@@ -13,7 +24,6 @@ BLECharacteristic* pCharacteristic = NULL;
 bool deviceConnected = false;
 bool oldDeviceConnected = false;
 uint32_t value = 0;
-
 
 class MyServerCallbacks: public BLEServerCallbacks {
     void onConnect(BLEServer* pServer) {
@@ -25,13 +35,10 @@ class MyServerCallbacks: public BLEServerCallbacks {
     }
 };
 
-
-
 void setup() {
-
   Serial.begin(BAUD_RATE);
-  //
-  analogReadResolution(12);
+  calculateCoeffs(filterCoeffs1, lowCutoff, highCutoff, sampleRate);
+  calculateCoeffs(filterCoeffs2, lowCutoff, highCutoff, sampleRate);
 
   // Create the BLE Device
   BLEDevice::init("ESP32");
@@ -46,12 +53,8 @@ void setup() {
   // Create a BLE Characteristic
   pCharacteristic = pService->createCharacteristic(
                       CHARACTERISTIC_UUID,
-                      BLECharacteristic::PROPERTY_READ   |
-                      BLECharacteristic::PROPERTY_WRITE  |
-                      BLECharacteristic::PROPERTY_NOTIFY |
-                      BLECharacteristic::PROPERTY_INDICATE
+                      BLECharacteristic::PROPERTY_NOTIFY
                     );
-
 
   pCharacteristic->addDescriptor(new BLE2902());
 
@@ -64,64 +67,79 @@ void setup() {
   pAdvertising->setScanResponse(false);
   pAdvertising->setMinPreferred(0x0);  // set value to 0x00 to not advertise this parameter
   BLEDevice::startAdvertising();
-  Serial.println("Waiting a client connection to notify...");
+  Serial.println("Waiting for a client connection to notify...");
 }
 
 void loop() {
-  // notify changed value
-  long sensor_value1 = analogRead(INPUT_PIN1);
-
-  float signal1 = EMGFilter1(sensor_value1);
-  if (deviceConnected) {
-    float a = signal1;
-    pCharacteristic->setValue(a);
-    pCharacteristic->notify();
-    value++;
-    delay(3); // bluetooth stack will go into congestion, if too many packets are sent, in 6 hours test i was able to go as low as 3ms
-  }
-  // disconnecting
-  if (!deviceConnected && oldDeviceConnected) {
-    delay(500); // give the bluetooth stack the chance to get things ready
-    pServer->startAdvertising(); // restart advertising
-    Serial.println("start advertising");
-    oldDeviceConnected = deviceConnected;
-  }
-  // connecting
-  if (deviceConnected && !oldDeviceConnected) {
-    // do stuff here on connecting
-    oldDeviceConnected = deviceConnected;
+  static unsigned long lastTime = 0;
+  if (millis() - lastTime >= 1000 / sampleRate) {
+    lastTime = millis();
+    int rawEMG = analogRead(emgPin);
+    float filteredEMG = applyBandpassFilter(rawEMG);
+    
+    if (deviceConnected) {
+      pCharacteristic->setValue(filteredEMG);
+      pCharacteristic->notify();
+      delay(3); // bluetooth stack will go into congestion if too many packets are sent
+    }
+    
+    // disconnecting
+    if (!deviceConnected && oldDeviceConnected) {
+      delay(500); // give the bluetooth stack the chance to get things ready
+      pServer->startAdvertising(); // restart advertising
+      Serial.println("start advertising");
+      oldDeviceConnected = deviceConnected;
+    }
+    // connecting
+    if (deviceConnected && !oldDeviceConnected) {
+      oldDeviceConnected = deviceConnected;
+    }
   }
 }
-float EMGFilter1(float input)
-{
-  float output = input;
-  {
-    static float z1, z2; // filter section state
-    float x = output - 0.05159732 * z1 - 0.36347401 * z2;
-    output = 0.01856301 * x + 0.03712602 * z1 + 0.01856301 * z2;
-    z2 = z1;
-    z1 = x;
+
+// Calculate the coefficients for a 2nd order bandpass filter
+void calculateCoeffs(float *coeffs, float lowCutoff, float highCutoff, int fs) {
+  float f0 = (highCutoff + lowCutoff) / 2.0;
+  float BW = highCutoff - lowCutoff;
+  float Q = f0 / BW;
+  float w0 = 2.0 * PI * f0 / fs;
+  float alpha = sin(w0) / (2.0 * Q);
+
+  float b0 = alpha;
+  float b1 = 0;
+  float b2 = -alpha;
+  float a0 = 1 + alpha;
+  float a1 = -2 * cos(w0);
+  float a2 = 1 - alpha;
+
+  coeffs[0] = b0 / a0;
+  coeffs[1] = b1 / a0;
+  coeffs[2] = b2 / a0;
+  coeffs[3] = a1 / a0;
+  coeffs[4] = a2 / a0;
+}
+
+// Apply the 4th order bandpass filter
+float applyBandpassFilter(int input) {
+  // Shift the history for the first stage
+  for (int i = 2; i > 0; i--) {
+    x1[i] = x1[i-1];
+    y1_hist[i] = y1_hist[i-1];
   }
-  {
-    static float z1, z2; // filter section state
-    float x = output - -0.53945795 * z1 - 0.39764934 * z2;
-    output = 1.00000000 * x + -2.00000000 * z1 + 1.00000000 * z2;
-    z2 = z1;
-    z1 = x;
+  x1[0] = input;
+
+  // Apply the first stage filter
+  y1_hist[0] = filterCoeffs1[0] * x1[0] + filterCoeffs1[1] * x1[1] + filterCoeffs1[2] * x1[2] - filterCoeffs1[3] * y1_hist[1] - filterCoeffs1[4] * y1_hist[2];
+
+  // Shift the history for the second stage
+  for (int i = 2; i > 0; i--) {
+    x2[i] = x2[i-1];
+    y2_hist[i] = y2_hist[i-1];
   }
-  {
-    static float z1, z2; // filter section state
-    float x = output - 0.47319594 * z1 - 0.70744137 * z2;
-    output = 1.00000000 * x + 2.00000000 * z1 + 1.00000000 * z2;
-    z2 = z1;
-    z1 = x;
-  }
-  {
-    static float z1, z2; // filter section state
-    float x = output - -1.00211112 * z1 - 0.74520226 * z2;
-    output = 1.00000000 * x + -2.00000000 * z1 + 1.00000000 * z2;
-    z2 = z1;
-    z1 = x;
-  }
-  return output;
+  x2[0] = y1_hist[0];
+
+  // Apply the second stage filter
+  y2_hist[0] = filterCoeffs2[0] * x2[0] + filterCoeffs2[1] * x2[1] + filterCoeffs2[2] * x2[2] - filterCoeffs2[3] * y2_hist[1] - filterCoeffs2[4] * y2_hist[2];
+
+  return y2_hist[0];
 }
