@@ -58,7 +58,6 @@ The following sections detail the setup, usage, and how to visualize and record 
    - Click the "Start" button to begin recording.
 
 ![LabRecorder Interface](https://github.com/BrainovativeLabs/Flexiwave/blob/main/Images/Lab%20Recorder.png)
-![LabRecorder Interface](https://github.com/BrainovativeLabs/Flexiwave/blob/main/Images/Lab%20Recorder.png)
 
 ## Visualizing Data in MATLAB using EEGLAB
 
@@ -75,6 +74,7 @@ The following sections detail the setup, usage, and how to visualize and record 
 3. **Visualize the Data:**
    - After loading the data, you can use EEGLAB's various visualization tools to analyze the EMG data.
 
+![EEGLAB Interface](https://github.com/BrainovativeLabs/Flexiwave/blob/main/Images/EEG%20Lab.png)
 ![EEGLAB Interface](https://github.com/BrainovativeLabs/Flexiwave/blob/main/Images/EEG%20Lab.png)
 
 ## Notes
