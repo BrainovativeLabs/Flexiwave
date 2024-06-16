@@ -74,7 +74,7 @@ The following sections detail the setup, usage, and how to visualize and record 
 3. **Visualize the Data:**
    - After loading the data, you can use EEGLAB's various visualization tools to analyze the EMG data.
 
-![EEGLAB Interface](images/eeglab_screenshot.png)
+![EEGLAB Interface](https://github.com/BrainovativeLabs/Flexiwave/blob/main/Images/EEG%20Lab.png)
 
 ## Notes
 
